@@ -36,6 +36,7 @@ def convert():
          url = data.get('audiourl')
          user = data.get('user_identifier')
          signedurl = data.get('signedUrl')
+         auth = data.get('auth')
          file_name = user
          response = requests.get(url)
          
@@ -49,8 +50,7 @@ def convert():
                file.write(response.content)
             
            
-            header = {"Authorization": "Basic Nzl0Y28wZ2hjbjJsMWk2MGdubTY2bHJuY2U6cHFydTE5bjk5ZmY2NDFvaGgyZDdocnNlZ2prNmpycHUxZzloZmhrNXRlZTF0cTEyaXAy",
-            "Content-Type": "application/x-www-form-urlencoded"}
+            header = {"Authorization": auth}
             data = {'grant_type':'client_credentials',
             'scope':'sonde-platform/users.write sonde-platform/voice-feature-scores.write sonde-platform/voice-feature-scores.read sonde-platform/storage.write'
             }
