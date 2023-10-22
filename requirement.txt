@@ -1,0 +1,7 @@
+ffmpeg
+Flask
+
+mimetypes
+ffmpy
+requests
+dotenv
